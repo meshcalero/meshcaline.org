@@ -1,4 +1,4 @@
-![Build Status](https://gitlab.antobaca.de/pages/meshcaline.org/badges/master/build.svg)
+[![pipeline status](https://gitlab.antobaca.de/as/meshcaline.org/badges/master/pipeline.svg)](https://gitlab.antobaca.de/as/meshcaline.org/-/commits/master)
 
 ---
 
