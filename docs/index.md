@@ -1,21 +1,25 @@
-# Welcome to MkDocs
+### .. evolving a design paradigm for hypertext based web service API
+<p/>
+#### Welcome to **blog.meshaline.org**! 
 
-This is a test site hosted on [GitLab Pages](https://pages.gitlab.io). You can
-[browse its source code](https://gitlab.com/pages/mkdocs), fork it and start
-using it on your projects.
+This blog contains a series of articles around **meshcaline**, a design paradigm for hypertext based web service API. Although the ideas of the meshcaline design are appropriate for many classes of API, it creates most value for API that are directly called from end-user devices (browser, mobile app) and that enable end-user facing business process implementations  
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+##### [REST in Piece](rest-in-peace)
 
-## Commands
+Everybody claims to have REST API theses days. Is this correct? And is REST really the right design paradigm for APIs? Analysing Roy Fielding's rules for REST APIs raises many concerns for the applicability of REST (as defined by the inventor) for public service API offerings.[...more](rest-in-peace)
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+##### [Basic meshcaline](basics)
 
-## Project layout
+What are the fundamental concepts and design paradigms of **meshcaline** and how does it implement hypertext? An introduction for getting started with **meshcaline** and a must read that sets the scene for most of the other posts. [...more](basics)
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+##### [Why Hypertext API?](hypertext)
+
+Despite the success of the hypertext concept in the *browsealbe* web, in the *programmable* web of service API, hypertext is only rarely used. Read how API users, API developers and API business benefit from a hypertext based service API.[...more](hypertext)
+
+##### [API Permalinks](permalinks)
+
+Individual resources in a meshcaline API represent steps in a business process. As such they are temporary resources. The simple permalink pattern enables API users to keep references to steps from one flow and start new flows from there in subsequent sessions.[...more](permalinks)
+
+##### [Paginateable Collections](pagination)
+
+Collections of objects with potentially large number of items risk that the size of resource representation grows beyond a reasonable limit. To avoid that risk **meshcaline** recommends a standard representation pattern for paginateable collections.[...more](pagination)

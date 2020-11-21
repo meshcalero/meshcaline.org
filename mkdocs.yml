@@ -1,3 +1,28 @@
-site_name: My Docs by GitLab Pages
-site_url: https://pages.gitlab.io/mkdocs
+site_name: blog.meshcaline.org
+site_url: http://localhost:8080
 site_dir: public
+
+theme:
+    name: mkdocs
+    nav_style: light #primary|dark|light
+    navigation_depth : 3
+    highlightjs: true
+#    hljs_style: Arta
+    hljs_languages:
+        - json
+    custom_dir: 'theme_override/'  
+
+extra_css:
+    - extra.css
+    
+nav:
+  - 'meshcaline?': meshcaline.md
+  - 'Content':
+    - 'REST in Peace': rest-in-peace.md
+    - 'Basic meshcaline': basics.md
+    - 'Why Hypertext API': hypertext.md
+    - 'API Permalinks': permalinks.md
+    - 'Paginateable Collections': pagination.md
+  - 'About': about.md  
+ 
+copyright: Copyright &copy; <a href="/legal/" rel="copyright"><span itemprop="copyrightHolder">meshcaline.org</span>, <span itemprop="copyrightYear">2014-<script>document.write(new Date().getFullYear())</script></span></a> | <span rel="license"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a></span> | <a href="/privacy/">Privacy Policy</a>

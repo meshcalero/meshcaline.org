@@ -1,0 +1,20 @@
+body.homepage h3 {
+	display:none;
+}
+
+blockquote {
+	padding-left: 20px;
+    border-left: 4px solid #d3d3d3;
+    font-style: italic;
+}
+
+
+footer, body .col-md-9 {
+  background-image: none;
+  background-color: #ffffffF0;
+}	
+
+body::before {
+  background-image: url(img/grid.jpg);
+  background-size: 100%; #cover;
+}
