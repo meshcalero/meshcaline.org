@@ -24,7 +24,7 @@ pages:
   - mkdir -p ~/.ssh
   - chmod 700 ~/.ssh
   - ssh-keyscan galatea.uberspace.de  >> ~/.ssh/known_hosts
-  - rsync public/* scan2@galatea.uberspace.de:~/html
+  - rsync -a public/* scan2@galatea.uberspace.de:~/html
   artifacts:
     paths:
     - public
