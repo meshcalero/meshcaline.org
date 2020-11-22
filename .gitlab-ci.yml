@@ -17,6 +17,13 @@ pages:
   stage: deploy
   script:
   - mkdocs build --strict --verbose
+  - apt-get update
+  - apt-get install -y rsync
+  - eval $(ssh-agent -s)
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - rsync public/* scan2@galatea.uberspace.de:~/html
   artifacts:
     paths:
     - public
