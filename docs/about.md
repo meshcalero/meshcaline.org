@@ -27,7 +27,7 @@ I assume that many of the topics I will touch in this blog can also help API des
 
 ###Be warned
 
-Not all of the concepts described in these articles did find their way into the [API I've been working on](http://places.demo.api.here.com) and by that had a chance to proof their value in the field. So better don't count on everything being perfect. If you find room for improvement, or confusing (hopefully not contradicting) aspects, please drop a comment on the post <script>if( window.location.pathname=="/about/" ){ var t="org", d="meshcaline", n="meshcalero"; var m=n+"@"+d+"."+t; document.write('or send me an email to <a href="mailto:'+m+'">'+m+'</a>');}</script>
+Not all of the concepts described in these articles did find their way into the API I've been working on and by that had a chance to proof their value in the field. So better don't count on everything being perfect. If you find room for improvement, or confusing (hopefully not contradicting) aspects, please drop a comment on the post <script>if( window.location.pathname=="/about/" ){ var t="org", d="meshcaline", n="meshcalero"; var m=n+"@"+d+"."+t; document.write('or send me an email to <a href="mailto:'+m+'">'+m+'</a>');}</script>
 
 ##About me
 

@@ -1,5 +1,5 @@
-site_name: blog.meshcaline.org
-site_url: http://localhost:8080
+site_name: meshcaline.org
+site_url: https://blog.meshcaline.org
 site_dir: public
 
 theme:
@@ -14,6 +14,10 @@ theme:
 
 extra_css:
     - extra.css
+    
+markdown_extensions:
+    - md_in_html
+    - attr_list
     
 nav:
   - 'meshcaline?': meshcaline.md

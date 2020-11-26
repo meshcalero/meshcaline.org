@@ -4,7 +4,7 @@
 
 >    -- Phil Karlton
 
-You wonder where the neologism **meshcaline** comes from?
+You wonder where the neologism *meshcaline*{: .m} comes from?
 
 It has two origins:
 
@@ -13,7 +13,7 @@ It has two origins:
 
 Beyond the nice analogies to this project the word has some additional properties that seemed to fit quite well:
 
-* The word **meshcaline** is both a noun (naming the concept) as well as an adjective (describing the individual characteristics of a design) 
+* The word *meshcaline*{: .m} is both a noun (naming the concept) as well as an adjective (describing the individual characteristics of a design) 
 * Some people immediately had the association **masculine**. While I hope that female developers find the concepts equally appealing, having *broad shoulders* (metaphorically speaking) helps when you argue against popular wisdom.
 * Being associated with a drug hopefully prevents the word to become a popular marketing term, so that people who use it, know why and what they use it for.
 * If more people find the ideas in this blog worth to work on/with, we can form the tribe of **meshcaleros**
