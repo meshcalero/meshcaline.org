@@ -2,9 +2,9 @@
 
 ---
 
-blog.meshcaline.org
+#blog.meshcaline.org
 
-This project generates the website for https://blog.antobaca.de
+This project generates the website for https://blog.meshcaline.org
 
 It uses [mkdocs][mkdocs] and is a fork of https://gitlab.com/pages/mkdocs 
 

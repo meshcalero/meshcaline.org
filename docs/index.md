@@ -1,8 +1,8 @@
 ### .. evolving a design paradigm for hypertext based web service API
 <p/>
-#### Welcome to **blog.meshaline.org**! 
+#### *Welcome to meshcaline.org!*{: .m} 
 
-This blog contains a series of articles around **meshcaline**, a design paradigm for hypertext based web service API. Although the ideas of the meshcaline design are appropriate for many classes of API, it creates most value for API that are directly called from end-user devices (browser, mobile app) and that enable end-user facing business process implementations  
+This blog contains a series of articles around *meshcaline*{: .m}, a design paradigm for hypertext based web service API. Although the ideas of the *meshcaline*{: .m} design are appropriate for many classes of API, it creates most value for API that are directly called from end-user devices (browser, mobile app) and that enable end-user facing business process implementations  
 
 ##### [REST in Piece](rest-in-peace)
 
@@ -10,7 +10,7 @@ Everybody claims to have REST API theses days. Is this correct? And is REST real
 
 ##### [Basic meshcaline](basics)
 
-What are the fundamental concepts and design paradigms of **meshcaline** and how does it implement hypertext? An introduction for getting started with **meshcaline** and a must read that sets the scene for most of the other posts. [...more](basics)
+What are the fundamental concepts and design paradigms of *meshcaline*{: .m} and how does it implement hypertext? An introduction for getting started with *meshcaline*{: .m} and a must read that sets the scene for most of the other posts. [...more](basics)
 
 ##### [Why Hypertext API?](hypertext)
 
@@ -18,8 +18,8 @@ Despite the success of the hypertext concept in the *browsealbe* web, in the *pr
 
 ##### [API Permalinks](permalinks)
 
-Individual resources in a meshcaline API represent steps in a business process. As such they are temporary resources. The simple permalink pattern enables API users to keep references to steps from one flow and start new flows from there in subsequent sessions.[...more](permalinks)
+Individual resources in a *meshcaline*{: .m} API represent steps that guide an end-user through a business process. As such they are by default temporary resources. The simple permalink pattern enables API users to keep references to steps from one business process and start new business processes from there in subsequent sessions.[...more](permalinks)
 
 ##### [Paginateable Collections](pagination)
 
-Collections of objects with potentially large number of items risk that the size of resource representation grows beyond a reasonable limit. To avoid that risk **meshcaline** recommends a standard representation pattern for paginateable collections.[...more](pagination)
+Collections of objects with potentially large number of items risk that the size of resource representation grows beyond a reasonable limit. To avoid that risk *meshcaline*{: .m} recommends a standard representation pattern for paginateable collections.[...more](pagination)

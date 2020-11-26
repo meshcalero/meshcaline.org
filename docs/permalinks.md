@@ -1,10 +1,8 @@
 #API Permalinks
 
-Individual resources in a meshcaline API represent steps in a business process that walk an end-user through the business process. As such they are by default temporary resources. The simple permalink pattern enables API users to keep references to steps from one business process and start new business processes from there in subsequent sessions.
+Client applications of a *meshcaline*{: .m} API must consider all resources accessed during a business process as "temporary" resources. The validity / accessibility of each resource is bound to what the API developer defines as appropriate duration for one business process. 
 
-Client applications of a meshcaline API must consider all resources accessed during a business process as "temporary" resources. The validity / accessibility of each resource is bound to what the API developer defines as appropriate duration for one business process. 
-
-For some resources you explicitly want to allow your users to keep permanent references so that a user can start a new use case in a future session starting from a certain step visited in a previous flow. E.g. in our music API we may want to allow our customer's applications to store list of favorite songs for their end-users lists which those might have discovered in various business processes (e.g. a search business process, recommendation business processes, etc.). 
+But business processes are usually not strictly isolated concepts. Often one business process (e.g. searching for some object) leads to some resource (e.g. the object searched for) from where you can start new business processes (e.g. update the object). As a result you might have resources for which you want to allow your application developers to keep permanent references so that their users can start a new business process in a future session from that resource. E.g. in our music API we may want to allow our customer's applications to store lists of favorite songs for their end-users lists which those might have discovered in various business processes (e.g. a search business process, recommendation business processes, etc.). 
 
 In those cases the response representation contains a hypertext control with link-relation [`bookmark`](http://www.w3.org/TR/html5/links.html#link-type-bookmark). Those hypertext controls will usually use the simplified URI-string representation: 
 
