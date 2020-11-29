@@ -33,7 +33,7 @@ Three resource types are predefined:
 * `#any`: The resource may return anything; 
 * `#implied`: The resource type is equal to the type specification of the hypertext control's context (the element that contains the control).
 
-The type `#implied` helps avoiding inflationary definitions of resource types. While an API documentation may only describe the mayor response types, such a type introduces an anonymous resource type that is defined as equally to the specification of the subelement within the resource type they are embedded with. 
+The type `#implied` helps avoiding inflationary definitions of resource types. While an API documentation may only describe the mayor response types, such a type introduces an anonymous resource type that is defined as equally to the specification of the sub-element within the resource type they are embedded with. 
 
 For many structured content types used in API, there also exists some schema language that allows specifying the syntax and semantics of a given entity of that content type. If a *meshcaline*{: .m} API provides such schema for their resource types within the content types it supports, then the resource type identifier should allow resolving the corresponding schema element. 
 
@@ -215,7 +215,7 @@ In those cases the simplified hypertext control representation is more readable 
 <div markdown="1" class="alert alert-info" role="alert">
 ####Example 6:
 
-A resource type `#album` shall contain a linked list of coverart jpegs
+A resource type `#album` shall contain a linked list of cover-art jpegs
 
 	{
 	     "title" : "London Calling",
