@@ -1,7 +1,22 @@
 {% extends "base.html" %}
 
-{% block footerd %}
-		<p>
-			<p> | Created with <a href="http://mkdocs.org">MkDocs</a></p>
+{% block footer %}
+			<hr>
+
+            <p>
+				Copyright &copy; 
+				<a href="/legal/" rel="copyright">
+					<span itemprop="copyrightHolder">meshcaline.org</span>, <span itemprop="copyrightYear">2014-<script>document.write(new Date().getFullYear())</script></span>
+				</a> 
+				| 
+				<span rel="license">
+					<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+						<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+					</a>
+				</span>
+				|
+				<a href="/privacy/">Privacy Policy</a>
+			</p>
+			<p>Published with <a href="http://mkdocs.org">MkDocs</a></p>
 		</p>
 {% endblock %}
