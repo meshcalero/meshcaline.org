@@ -33,6 +33,7 @@ nav:
     - 'API Permalinks': permalinks.md
     - 'Paginateable Collections': pagination.md
     - 'API Evolution & Compatibility': evolution.md
+    - 'Consumer Driven Response Types': filters.md
   - 'About': about.md  
  
 google_analytics: ['UA-52776545-1', 'meshcaline.org']
