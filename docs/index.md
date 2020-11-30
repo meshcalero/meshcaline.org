@@ -30,4 +30,4 @@ Now that we have the basic ingredients to design the API for our product, let's 
 
 ##### [Consumer Driven Response Types](filters)
 
-By combining elements of consumer driven contracts and response filtering *meshcaline*{: .m} allows you to better understand how your clients use your API and with that enable you to control experimental features and to manage the introduction of incompatible changes [...more](filters)
+By combining ideas of consumer driven contracts and response filtering *meshcaline*{: .m} allows you to better understand how your clients use your API and with that enable you to control experimental features and to manage the introduction of incompatible changes [...more](filters)
