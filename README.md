@@ -1,4 +1,4 @@
-[![pipeline status](https://github.com/meshcalero/meshcaline.org/actions/workflows/deploy/badge.svg)
+[![pipeline status](https://github.com/meshcalero/meshcaline.org/actions/workflows/deploy.yml/badge.svg)
 
 ---
 
@@ -8,4 +8,4 @@ This project generates https://meshcaline.org, a series or articles related to h
 
 ---
 
-Powered by [mkdocs][mkdocs]
+Powered by [mkdocs](mkdocs)
