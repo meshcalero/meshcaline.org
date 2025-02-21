@@ -1,22 +1,11 @@
-[![pipeline status](https://gitlab.antobaca.de/as/meshcaline.org/badges/master/pipeline.svg)](https://gitlab.antobaca.de/as/meshcaline.org/-/commits/master)
+[![pipeline status](https://github.com/meshcalero/meshcaline.org/actions/workflows/deploy/badge.svg)
 
 ---
 
-#blog.meshcaline.org
+#meshcaline.org
 
-This project generates the website for https://blog.meshcaline.org
-
-It uses [mkdocs][mkdocs] and is a fork of https://gitlab.com/pages/mkdocs 
-
-
-[ci]: https://about.gitlab.com/gitlab-ci/
-[mkdocs]: http://www.mkdocs.org
-[mkdocs-gitlab]: https://gitlab.com/pages/mkdoc
-[install]: http://www.mkdocs.org/#installation
-[documentation]: http://www.mkdocs.org
-[userpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#user-or-group-pages
-[projpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#project-pages
+This project generates https://meshcaline.org, a series or articles related to hypertext based API design.
 
 ---
 
-Forked from https://gitlab.com/pages/mkdoc
+Powered by [mkdocs][mkdocs]
