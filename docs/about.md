@@ -1,6 +1,6 @@
 #About this blog
 
-Working on a public web service API for some years now, [I (Andreas Schmidt)](#about_me) thought that posting a series of articles on the experiences made and conclusions/solutions derived from that might be worth to share with a wider audience. Hopefully this blog gives you some inspiration for your own API project and helps you avoiding some of the design iteration my team and I went through.
+Working on a public web service API for some years now, [I (Andreas Schmidt)](#about-me) thought that posting a series of articles on the experiences made and conclusions/solutions derived from that might be worth to share with a wider audience. Hopefully this blog gives you some inspiration for your own API project and helps you avoiding some of the design iteration my team and I went through.
 
 ##Scope
 

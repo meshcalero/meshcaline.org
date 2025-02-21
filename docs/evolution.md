@@ -27,7 +27,7 @@ As a consequence of the above you have to accept the much more cumbersome approa
 
 ### Hyperlinks rather than URI templates
 
-As already described in ["Why Hypertext API?"](hypertext/#changeable-resource-addressing-schema) *meshcaline's*{: .m} hypertext based design allows you to change the addressing scheme of the individual resources of your API, including splitting up the API implementation into multiple service. While there are various  mechanisms how you could split up the implementation of a growing API, they all come at least at the expense of the introduction of an additional component that does the traffic routing, which introduces an avoidable single-point-of-failure. With a *meshcaline*{: .m} API you get a scalable solution for free as your hypertext controls would always point to the correct service.
+As already described in ["Why Hypertext API?"](hypertext.md/#changeable-resource-addressing-schema) *meshcaline's*{: .m} hypertext based design allows you to change the addressing scheme of the individual resources of your API, including splitting up the API implementation into multiple service. While there are various  mechanisms how you could split up the implementation of a growing API, they all come at least at the expense of the introduction of an additional component that does the traffic routing, which introduces an avoidable single-point-of-failure. With a *meshcaline*{: .m} API you get a scalable solution for free as your hypertext controls would always point to the correct service.
 
 ### Extensible API contract
 
@@ -92,14 +92,14 @@ But there are also more subtle non-functional changes that you have to take care
 
 ### Processing rules
 
-The documentation of a *meshcaline*{: .m} API usually doesn't only contain the specification of syntax and semantic of your resource types. In addition to that it may also contain processing rules. We have already seen some of them in the description of *meshcaline's*{: .m} [data model for hypertext controls](../basics#processing-rules). Those processing rules got introduced to maximize conciseness and readability of the API responses.
+The documentation of a *meshcaline*{: .m} API usually doesn't only contain the specification of syntax and semantic of your resource types. In addition to that it may also contain processing rules. We have already seen some of them in the description of *meshcaline's*{: .m} [data model for hypertext controls](basics.md#processing-rules). Those processing rules got introduced to maximize conciseness and readability of the API responses.
 
 Another important purpose of processing rules is forward compatibility: They instruct your clients how to deal with expected future extensions of your API. 
 
 We have seen the most important processing rule of *meshcaline*{: .m} API already in the section above: 
 _"Ignore any data element that you don't expect!"_
 
-Another example for a processing rule was used in the [Extensible business process flows](/hypertext/#extensible-business-process-flows) example, where we asked clients to _"Show the title of all related resources when you know its resource type and guide your users to them by using the provided link!"_
+Another example for a processing rule was used in the [Extensible business process flows](hypertext.md/#extensible-business-process-flows) example, where we asked clients to _"Show the title of all related resources when you know its resource type and guide your users to them by using the provided link!"_
 
 The latter rule is basically an extension of the _"Ignore any data element ..."_ rule, but instead of individual data elements it applies to individual items of an untyped collection. 
 

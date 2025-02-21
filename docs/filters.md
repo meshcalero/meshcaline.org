@@ -4,7 +4,7 @@ A *meshcaline*{: .m} API supports _Consumer Driven Resource Types_, an API featu
 
 ## Experimental features
 
-As we have seen in [API Evolution & Compatibility](evolution) we have to carefully plan any change to our API to make sure that the change is (a) backward compatible to previous API version and (b) enables the introduction of additional features in the future. But this is not aways possible.
+As we have seen in [API Evolution & Compatibility](evolution.md) we have to carefully plan any change to our API to make sure that the change is (a) backward compatible to previous API version and (b) enables the introduction of additional features in the future. But this is not aways possible.
 
 Daily practice shows us, that regardless how hard we try, it usually requires some iterations until a problem is well enough understood and a solution's API design is mature and sustainable. This seems to be a unresolvable conflict to backward compatibility. How can you experiment with your API design if you always have to make sure that you neither break the past nor the future? The purpose of an experiment is to learn from mistakes and then iterate until you have found an appropriate e solution.
 
@@ -32,7 +32,7 @@ With _Consumer Driven Resource Types_ you can rely on the "information hiding" a
 
 But there are more advantages that come with _Consumer Driven Resource Types_:
 
-* By only responding what has been explicitly requested your clients can make best use of the available bandwidth to your API and you have eliminated the risk of [non-functional backwards incompatibility](/evolution#non-functional-changes) introduced by additional large data elements. 
+* By only responding what has been explicitly requested your clients can make best use of the available bandwidth to your API and you have eliminated the risk of [non-functional backwards incompatibility](evolution.md#non-functional-changes) introduced by additional large data elements. 
 * Rather than ignoring items of untyped collections they are not aware of, your clients tell you which types of items the can/want to handle. This helps avoiding situations where clients have to iterate through multiple pages of collections before they get the elements they can use.
 * You can measure the popularity of each individual data element, which gives you a significant better understanding about your clients than you would have if you would only track the access on the level of resources.
 
