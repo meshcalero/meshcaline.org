@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        <link rel="canonical" href="https://blog.meshcaline.org/">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>meshcaline.org</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/json.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href=".">meshcaline.org</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="meshcaline/" class="nav-link">meshcaline?</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Content</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="rest-in-peace/" class="dropdown-item">REST in Peace</a>
+</li>
+                                    
+<li>
+    <a href="basics/" class="dropdown-item">Basic meshcaline</a>
+</li>
+                                    
+<li>
+    <a href="hypertext/" class="dropdown-item">Why Hypertext API</a>
+</li>
+                                    
+<li>
+    <a href="permalinks/" class="dropdown-item">API Permalinks</a>
+</li>
+                                    
+<li>
+    <a href="pagination/" class="dropdown-item">Paginateable Collections</a>
+</li>
+                                    
+<li>
+    <a href="evolution/" class="dropdown-item">API Evolution & Compatibility</a>
+</li>
+                                    
+<li>
+    <a href="filters/" class="dropdown-item">Consumer Driven Response Types</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="3"><a href="#evolving-a-design-paradigm-for-hypertext-based-web-service-api" class="nav-link">.. evolving a design paradigm for hypertext based web service API</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="evolving-a-design-paradigm-for-hypertext-based-web-service-api">.. evolving a design paradigm for hypertext based web service API</h3>
+<p/>
+<h4 id="welcome-to-meshcalineorg"><em class="m">Welcome to meshcaline.org!</em></h4>
+<p>This blog contains a series of articles around <em class="m">meshcaline</em>, a design paradigm for hypertext based web service API. Although the ideas of the <em class="m">meshcaline</em> design are appropriate for many classes of API, it creates most value for API that are directly called from end-user devices (browser, mobile app) and that enable end-user facing business process implementations  </p>
+<h5 id="rest-in-piece"><a href="rest-in-peace/">REST in Piece</a></h5>
+<p>Everybody claims to have REST API theses days. Is this correct? And is REST really the right design paradigm for APIs? Analyzing Roy Fielding's rules for REST APIs raises many concerns for the applicability of REST (as defined by the inventor) for public service API offerings. <a href="rest-in-peace/">...more</a></p>
+<h5 id="basic-meshcaline"><a href="basics/">Basic meshcaline</a></h5>
+<p>What are the fundamental concepts and design paradigms of <em class="m">meshcaline</em> and how does it implement hypertext? An introduction for getting started with <em class="m">meshcaline</em> and a must read that sets the scene for most of the other posts. <a href="basics/">...more</a></p>
+<h5 id="why-hypertext-api"><a href="hypertext/">Why Hypertext API?</a></h5>
+<p>Despite the success of the hypertext concept in the <em>browsealbe</em> web, in the <em>programmable</em> web of service API, hypertext is only rarely used. Read how API users, API developers and API business benefit from a hypertext based service API. <a href="hypertext/">...more</a></p>
+<h5 id="api-permalinks"><a href="permalinks/">API Permalinks</a></h5>
+<p>Individual resources in a <em class="m">meshcaline</em> API represent steps that guide an end-user through a business process. As such they are by default temporary resources. The simple permalink pattern enables API users to keep references to steps from one business process and start new business processes from there in subsequent sessions. <a href="permalinks/">...more</a></p>
+<h5 id="paginateable-collections"><a href="pagination/">Paginateable Collections</a></h5>
+<p>Collections of objects with potentially large number of items risk that the size of resource representation grows beyond a reasonable limit. To avoid that risk <em class="m">meshcaline</em> recommends a standard representation pattern for paginateable collections. <a href="pagination/">...more</a></p>
+<h5 id="api-evolution-compatibility"><a href="evolution/">API Evolution &amp; Compatibility</a></h5>
+<p>Now that we have the basic ingredients to design the API for our product, let's analyze what we can do to iteratively evolve our product while at the same time provide a predictable and reliable service to our clients. <a href="evolution/">...more</a></p>
+<h5 id="consumer-driven-response-types"><a href="filters/">Consumer Driven Response Types</a></h5>
+<p>By combining ideas of consumer driven contracts and response filtering <em class="m">meshcaline</em> allows you to better understand how your clients use your API and with that enable you to control experimental features and to manage the introduction of incompatible changes <a href="filters/">...more</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+			<hr>
+
+            <p>
+				Copyright &copy; 
+				<a href="/legal/" rel="copyright">
+					<span itemprop="copyrightHolder">meshcaline.org</span>, <span itemprop="copyrightYear">2014-<script>document.write(new Date().getFullYear())</script></span>
+				</a> 
+				| 
+				<span rel="license">
+					<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+						<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+					</a>
+				</span>
+				|
+				<a href="/privacy/">Privacy Policy</a>
+			</p>
+			<p>Published with <a href="http://mkdocs.org">MkDocs</a></p>
+		</p>
+
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 72, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2025-02-21 23:57:28.129262+00:00
+-->

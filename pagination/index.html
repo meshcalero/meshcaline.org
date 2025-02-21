@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://blog.meshcaline.org/pagination/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Paginateable Collections - meshcaline.org</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/json.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="..">meshcaline.org</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../meshcaline/" class="nav-link">meshcaline?</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Content</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../rest-in-peace/" class="dropdown-item">REST in Peace</a>
+</li>
+                                    
+<li>
+    <a href="../basics/" class="dropdown-item">Basic meshcaline</a>
+</li>
+                                    
+<li>
+    <a href="../hypertext/" class="dropdown-item">Why Hypertext API</a>
+</li>
+                                    
+<li>
+    <a href="../permalinks/" class="dropdown-item">API Permalinks</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Paginateable Collections</a>
+</li>
+                                    
+<li>
+    <a href="../evolution/" class="dropdown-item">API Evolution & Compatibility</a>
+</li>
+                                    
+<li>
+    <a href="../filters/" class="dropdown-item">Consumer Driven Response Types</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../permalinks/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../evolution/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#paginateable-collections" class="nav-link">Paginateable Collections</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="paginateable-collections">Paginateable Collections</h1>
+<p>Often resources can contain collections of objects, or collections of hypertext controls to other resources, where the size of the collections would make it a bad idea to return the full collection in one API response. Except in cases where it is known upfront that a specific collection can never grow beyond some reasonable size, a <em class="m">meshcaline</em> API should use a standardized pattern for paginateable collections. </p>
+<p>This representation then holds at least two elements: the individual items of the first page of the collection in an attribute <code>items</code> and an optional hypertext control <code>next</code> that points to the next page:</p>
+<pre><code>{
+    "name" : "The Clash",
+    "popularSongs": {
+        "next": "http://....",
+        "items": [
+            {
+                "title" : "London Calling",
+                "href": "http://",
+                "type": "#song", ...
+            },
+            { ...
+            }, ...
+        ] 
+    }, ...
+}
+</code></pre>
+<p>Hypertext controls for pagination have a resource type <code>#implied</code> and a method <code>GET</code> and therefore the controls can always use the simplified URI string representation. Following such a link does return the resource type implicitly defined from the link's context. In our example it contains the next chunk of items of the <code>popularSongs</code> collection:</p>
+<pre><code>{
+    "next": "http://....",
+    "items": [
+        {
+            "title" : "Rock the Casbah",
+            "href": "http://",
+            "type": "#song", ...
+        }, ...
+    ] 
+}
+</code></pre>
+<p>The end of the collection is reached, when there is no more <code>next</code> attribute.</p>
+<p>The specific representations of the <code>items</code> attribute may vary, depending on the type of collection (Maps, Lists, Sets).</p>
+<p>A <em class="m">meshcaline</em> API may provide additional attributes in their collection representation. The usual suspects include:</p>
+<ul>
+<li>the total number of available items, </li>
+<li>some offset of the first item in the current page in the whole a collection, or</li>
+<li>additional hypertext controls for direct access to the previous, first or last page of a collection.</li>
+</ul>
+<p>You better think twice before you introduce such convenience features: Your API users will expect a consistent set of collection attributes for all collections in your API. And while you may initially think this is not too hard to achieve, there exist classes of collections where this is not simple, if not impossible: Assume we want to add a list of next concerts to our artist representation, but not having such data yourself you rely for that feature on a ticket supplier's API that only allows you to fetch the next 10 gigs after a given date. Then you would neither know how many concerts will be available in total, nor can you easily build a <code>prev</code> link, unless you encode somehow the dates of all previously visited pages in the URI. A <code>last</code> link would even require you to iterate the 3rd party API until you get the first response with less than 10 results back. Therefore it is best practice to keep the pagination representation minimal unless you learn from your users that more complex pagination constructs are really required for the business processes your API shall support.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+			<hr>
+
+            <p>
+				Copyright &copy; 
+				<a href="/legal/" rel="copyright">
+					<span itemprop="copyrightHolder">meshcaline.org</span>, <span itemprop="copyrightYear">2014-<script>document.write(new Date().getFullYear())</script></span>
+				</a> 
+				| 
+				<span rel="license">
+					<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+						<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+					</a>
+				</span>
+				|
+				<a href="/privacy/">Privacy Policy</a>
+			</p>
+			<p>Published with <a href="http://mkdocs.org">MkDocs</a></p>
+		</p>
+
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 72, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://blog.meshcaline.org/about/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>About - meshcaline.org</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/json.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="..">meshcaline.org</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../meshcaline/" class="nav-link">meshcaline?</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Content</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../rest-in-peace/" class="dropdown-item">REST in Peace</a>
+</li>
+                                    
+<li>
+    <a href="../basics/" class="dropdown-item">Basic meshcaline</a>
+</li>
+                                    
+<li>
+    <a href="../hypertext/" class="dropdown-item">Why Hypertext API</a>
+</li>
+                                    
+<li>
+    <a href="../permalinks/" class="dropdown-item">API Permalinks</a>
+</li>
+                                    
+<li>
+    <a href="../pagination/" class="dropdown-item">Paginateable Collections</a>
+</li>
+                                    
+<li>
+    <a href="../evolution/" class="dropdown-item">API Evolution & Compatibility</a>
+</li>
+                                    
+<li>
+    <a href="../filters/" class="dropdown-item">Consumer Driven Response Types</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../filters/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#about-this-blog" class="nav-link">About this blog</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#scope" class="nav-link">Scope</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#be-warned" class="nav-link">Be warned</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#about-me" class="nav-link">About me</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="about-this-blog">About this blog</h1>
+<p>Working on a public web service API for some years now, <a href="#about-me">I (Andreas Schmidt)</a> thought that posting a series of articles on the experiences made and conclusions/solutions derived from that might be worth to share with a wider audience. Hopefully this blog gives you some inspiration for your own API project and helps you avoiding some of the design iteration my team and I went through.</p>
+<h2 id="scope">Scope</h2>
+<p>You can build web service API for many different purposes. Each purpose comes with various aspects beyond the specific functionality it is supposed to deliver. In most cases other aspects will also have a massive influence on the question how good a given design serves the purpose of the API, e.g.:</p>
+<ul>
+<li><strong>Business</strong>: How can I monetize the API offering? </li>
+<li><strong>Audience</strong>: For whom do you provide the API? How will those users of the API want, need, or expect to use the API? </li>
+<li><strong>Client platforms</strong>: How will clients connect to the web service API? What are the capabilities of those client platforms? </li>
+</ul>
+<p>In this blog I will focus on solutions for a very specific subset of API purposes, simply because it is the domain I've been focusing on during the last years: </p>
+<blockquote>
+<p>Public API offerings, where the API provides access to a commercial offering that is expected to be called directly from within a client application on the end-user's device.</p>
+</blockquote>
+<p>In this domain several aspects play a very important role:</p>
+<ul>
+<li>Public APIs get developed for an anonymous audience. You might have a closer relationship with some of your users, but the majority you will never meet f2f or have any direct communication with. Most developers will learn about your offering through some form of communications and then spend some time evaluating your product. If they get into your API easily and find quality and terms appropriate you have a chance to get a new customer. If not, there is a high probability that you will never receive any feedback from them and therefore have no chance to learn what they disliked.</li>
+<li>A commercial product competes on the market. For this it needs differentiation. Assuming that monetization of a commercial API is based on its usage, you try to bind customers as long as possible and motivate them to use your product more often. Keep in mind that this to a certain extent contradicts with your user's goals: While they might love your solution, "provider lock-in" is something that most customers don't like. That means, you must find the right balance.</li>
+<li>Any remote call has an impact on the performance characteristics of the calling application. API accessed directly from client applications need to take this into account, especially when those connect through mobile networks. In addition the API must be able to handle limited capabilities that specific client platforms may have.</li>
+</ul>
+<p>You might have already realized that there is no "silver bullet" for API design. A given design paradigm might be the ideal solution for one purpose, but may result in a complete disaster if applied for a different one. So whenever you find some popular API you like, just copying its design paradigm into your domain won’t automatically make your API useful, loved and popular as well. At the same time, copy-with-pride can be a very good practice in API design, as it can dramatically reduce the learning curve of your potential users. Particularly when you compete with other solutions in a given domain, this may be the significant reason, why developers chose your API for further evaluation instead of another one: they simply feel already familiar with the API from the start. Therefore you not only need to understand the building blocks of an API design you like, you also have to understand which aspects of the purpose of a given API they support. While this blog is about a technical domain, quite often I will give non-technical reasons why I believe the proposed solution is worth to consider.</p>
+<p>I assume that many of the topics I will touch in this blog can also help API designers in other domains, and I would love to receive your feedback on that.</p>
+<h3 id="be-warned">Be warned</h3>
+<p>Not all of the concepts described in these articles did find their way into the API I've been working on and by that had a chance to proof their value in the field. So better don't count on everything being perfect. If you find room for improvement, or confusing (hopefully not contradicting) aspects, please drop a comment on the post <script>if( window.location.pathname=="/about/" ){ var t="org", d="meshcaline", n="meshcalero"; var m=n+"@"+d+"."+t; document.write('or send me an email to <a href="mailto:'+m+'">'+m+'</a>');}</script></p>
+<h2 id="about-me">About me</h2>
+<p>If you're interested to know more about me you might want to visit my <a href="https://www.linkedin.com/in/andreas-schmidt-bln/">Linkedin Profile</a> as a starting point.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+			<hr>
+
+            <p>
+				Copyright &copy; 
+				<a href="/legal/" rel="copyright">
+					<span itemprop="copyrightHolder">meshcaline.org</span>, <span itemprop="copyrightYear">2014-<script>document.write(new Date().getFullYear())</script></span>
+				</a> 
+				| 
+				<span rel="license">
+					<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+						<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+					</a>
+				</span>
+				|
+				<a href="/privacy/">Privacy Policy</a>
+			</p>
+			<p>Published with <a href="http://mkdocs.org">MkDocs</a></p>
+		</p>
+
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 72, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

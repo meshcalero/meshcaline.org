@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://blog.meshcaline.org/hypertext/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Why Hypertext API - meshcaline.org</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/json.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="..">meshcaline.org</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../meshcaline/" class="nav-link">meshcaline?</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Content</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../rest-in-peace/" class="dropdown-item">REST in Peace</a>
+</li>
+                                    
+<li>
+    <a href="../basics/" class="dropdown-item">Basic meshcaline</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Why Hypertext API</a>
+</li>
+                                    
+<li>
+    <a href="../permalinks/" class="dropdown-item">API Permalinks</a>
+</li>
+                                    
+<li>
+    <a href="../pagination/" class="dropdown-item">Paginateable Collections</a>
+</li>
+                                    
+<li>
+    <a href="../evolution/" class="dropdown-item">API Evolution & Compatibility</a>
+</li>
+                                    
+<li>
+    <a href="../filters/" class="dropdown-item">Consumer Driven Response Types</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../basics/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../permalinks/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#why-hypertext-api" class="nav-link">Why Hypertext API?</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#why-should-api-users-want-a-hypertext-api" class="nav-link">Why should API users want a hypertext API?</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#changeable-resource-addressing-schema" class="nav-link">Changeable resource addressing schema</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#application-state-in-stateless-service" class="nav-link">Application state in stateless service</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#extensible-business-process-flows" class="nav-link">Extensible business process flows</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#developer-experience" class="nav-link">Developer Experience</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-does-hypertext-bring-to-your-business" class="nav-link">What does hypertext bring to your business?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="why-hypertext-api">Why Hypertext API?</h1>
+<p>Although everyone these days is familiar with hypertext when browsing the web, in API hypertext formats are still quite uncommon. While most developers are used to URI as data-elements for accessing static resources (like jpeg photos), they are still new to using hypertext controls as mechanism to access the individual resources of an API. Also tool support for hypermedia controls in "web frameworks" is often still only limited.</p>
+<p>There still seems to be a need to convince both, client and server side developers (and their tool-producers) of the advantages of hypertext driven API.</p>
+<h2 id="why-should-api-users-want-a-hypertext-api">Why should API users want a hypertext API?</h2>
+<p>Most developers are used to some hard coded URI templates in their application to construct the actual URI required to access an API resource. So many of them will argue that constructing the URI from values collected in the application context is a well understood problem with plenty of handy solutions available. So you better don't expect to get frenetic applause when you tell them that you now serve those much more convenient, ready to use hypermedia URI with the response. Best reaction you could expect is that your users don't care. But some might even dislike this, because their favorite "REST toolkit" expects URI templates for specific types of resources and doesn't work well with individual links per request. </p>
+<p>So be prepared that you need some convincing arguments!</p>
+<h3 id="changeable-resource-addressing-schema">Changeable resource addressing schema</h3>
+<p>The most obvious advantage of hypertext is the ability to change the resource addressing schema at any time. Unfortunately this looks like a very one-sided advantage for you as the provider of the API. From your user's point of view, they are not really interested in you being able to change your resource addressing schema. And it is hard to argue against users when they say that it should not be too difficult for an API provider to maintain legacy addressing schemas even when the underlying implementation dramatically changes. Worst case you have to (internally) map your legacy addressing schema to the most recent implementations. This argument misses one important aspect of the addressing schema: the domain name of the API request. As API evolve and grow, you might come to the point where you must apply some partitioning / sharding to your API. Either because you no longer can make all data available in your service efficiently available to all nodes, or because you realize that you must run different parts of your API on different machines. You could build some routing service in front of your API to overcome that problem, but not only does this additional network hub add unnecessary milliseconds to your processing time (and usually you do partitioning for performance reasons), it also introduces a new potential bottleneck in your architecture. Latest when you want to change networks for some parts of your API (e.g. when you want to run some aspects of your API through some CDN), the option for a routing service is gone, as it would kill the advantage of the partitioning. </p>
+<h3 id="application-state-in-stateless-service">Application state in stateless service</h3>
+<p>Even if you believe that you never have to partition you service, there is another important advantage that hypertext API enables: having application state in a stateless API implementation. Whoever has implemented a service that has to handle substantial load knows that things can get difficult as soon as you have maintain state specific to one client's flow though your service's business process implementation. If you want to maintain that state in your server side implementation, then you need often non-trivial mechanisms that ensure that all nodes in your cluster have access to that state-information. And once you have to plan for fail-over scenarios to other clusters / data centers things get really tricky. When you instead use hypertext, you get a nice, 100% fault-tolerant storage for the state information for free: the URI. While (practically) limited in size (although HTTP defines no size-restrictions for URI, some archaic, but still popular HTTP clients still have size constraints that limit for a general purpose API the URI to 2k), this is in many real-world cases sufficient space to encode state information you have to pass along. While feature-wise not equally powerful (server side state implementation ensure that state modifications will be shared with all API calls chronologically happen after the modification, while URI based state will only be available to resources that are linked directly or indirectly from the response that caused the modification), is is still sufficient in many cases. If that's what you need, you and your users get it for free. Even more important: you can introduce and change the availability and scope of state whenever needed. Often you only realize in an advanced version of your (stateless) API implementation, that information that was available in one step of your business process could provide improved results if also available in one of the subsequent steps. In a typical URI-template based API contract you would have no chance to pass this information along with existing clients, simply because it would require a change in existing client implementations to pass along that additional information. With hypertext you can do this kind of things, without breaking existing client implementations.</p>
+<h3 id="extensible-business-process-flows">Extensible business process flows</h3>
+<p>With <em class="m">meshcaline</em>'s flavor of hypertext you can enable one additional, very powerful feature: extensible business process flows! Having resource types as a core concept of a <em class="m">meshcaline</em> design, an application could build extensible UX components, which can automatically (without any code change) offer new features to the their users as the feature-set of your API evolves: Assume our simple music service has four resource types: individual songs and artist (<code>#song</code>, <code>#artist</code>) and lists of those (<code>#songs</code>, <code>#artists</code>). Now suppose we define for each of the four resource types an attribute "related" and define it to hold a collection of hypertext controls, each containing a "title" element. E.g. in an early version of your API you offer a link to other popular songs of the same artist:</p>
+<pre><code>{
+     "title" : "London Calling",
+     "interpreter" : {
+          "name" : "The Clash",
+          "href" : "https:/....",
+          "type" : "#artist", ...
+     },
+     "related": [
+          {
+               "title": "More songs of 'The Clash'",
+               "href":"https:/...",
+               "type":"#songs"
+          }
+     ]
+}
+</code></pre>
+<p>If application developers render in their UI some buttons displaying the title attribute and on selection of that button display a UI appropriate for resource-type, their applications will automatically offer additional features to their users when subsequent releases of your API introduce additional features:</p>
+<pre><code>{
+     "title" : "London Calling",
+     "interpreter" : {
+          "name" : "The Clash",
+          "href" : "https:/....",
+          "type" : "#artist", ...
+     },
+     "related": [
+          {
+               "title": "More songs of 'The Clash'",
+               "href":"https:/...",
+               "type":"#songs"
+          },
+          {
+               "title": "Other British post-punk bands",
+               "href":"https:/...",
+               "type":"#artists"
+          },
+          {
+               "title": "Similar songs'",
+               "href":"https:/...",
+               "type":"#songs"
+          }
+     ]
+}
+</code></pre>
+<p>While in URI template based API your users would read you release notes to learn about the new features, check in documentation how to call those three different features and then implement some code that constructs the request, in a <em class="m">meshcaline</em> API the amount of client code is primarily influenced by the number of resource types your API supports, not by the amount of API features. So as long as you don't introduce new result types, a forward compatible app implementation would have the new features automatically.</p>
+<p>As you might have seen the <code>related</code> collection contains hypertext controls for multiple resource types (both <code>songs</code> and <code>#artists</code>). We could even introduce new resource types over time (e.g. <code>#gigs</code>). All your user's applications have to be prepared for is to ignore any link with an unknown resource type (in the same way as they are used to ignore data attributes they don't know) and for the remaining ones let the user select one of the <code>title</code> elements and then pick an appropriate UI component for rendering the returned resource type. Such simple "forward compatibility processing rules" allow you to expand the features delivered by you API without being forced to introduce a new API version.</p>
+<p>In summary: A hypertext based API allows the API developers to improve and extend the implementation of their offering without breaking existing clients and allows API users to automatically gain from those improvements without the need to modify / reship their apps.</p>
+<h2 id="developer-experience">Developer Experience</h2>
+<p>Beyond the technical advantages of hypermedia, one of the most compelling reasons for a hypertext based public API offering is not technical at all: By using hypertext as interaction paradigm you can help your users to more easily understand your API, simply by using it within a browser. Even when you do nothing special but just serve your standard JSON representation, your users could just use one of the browser plugins that provide a nice JSON rendering and then see everything they can do with your API by playing around with your API in a browser and follow the links to other steps within the use-case flows.</p>
+<p>With some extra efforts you can even achieve significantly more: You could use standard HTML as representation format or, by supporting HTTP content negotiation, allow your users the select amongst various representation formats the one best suited for their needs. Then your API would automatically return the HTML representation when an API is entered in a browsers address field.</p>
+<p>Instead of / in addition to the JSON representation</p>
+<pre><code>{
+     "title" : "London Calling",
+     "interpreter" : {
+          "name" : "The Clash",
+          "href" : "https:/....",
+          "type" : "#artist", ...
+     },
+     "related": [
+          {
+               "title": "More songs of 'The Clash'",
+               "href":"https:/...",
+               "type":"#songs"
+          }
+     ]
+}
+</code></pre>
+<p>you provide a HTML representation of your resource types:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;dl&gt;
+    &lt;dt&gt;title&lt;/dt&gt;&lt;dd&gt;London Calling&lt;/dd&gt;
+    &lt;dt&gt;interpreter&lt;/dt&gt;&lt;dd&gt;
+        &lt;a href="https:/...."&gt;
+            &lt;dl&gt;
+                &lt;dt&gt;name&lt;/dt&gt;&lt;dd&gt;The Clash&lt;/dd&gt;
+                &lt;dt&gt;type&lt;/dt&gt;&lt;dd&gt;#artist&lt;/dd&gt;
+            &lt;/dl&gt;
+        &lt;/a&gt;
+    &lt;/dd&gt;
+    &lt;dt&gt;related&lt;/dt&gt;&lt;dd&gt;
+        &lt;ul&gt;
+            &lt;li&gt;
+                &lt;a href="https:/...."&gt;
+                    &lt;dl&gt;
+                        &lt;dt&gt;title&lt;/dt&gt;&lt;dd&gt;More songs of 'The Clash'&lt;/dd&gt;
+                        &lt;dt&gt;type&lt;/dt&gt;&lt;dd&gt;#songs&lt;/dd&gt;
+                    &lt;/dl&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>While most developers would most likely still prefer to use a regular JSON/XML within their applications, supporting HTML representation in addition allows developers to immediately see all API features within a regular web browser. The can even directly follow all links with GET requests without additional work for you.</p>
+<p>By adding some JavaScript and CSS, you can then decorate your API with a fully fledged playground and turn it into a marketing tool / learning tool for your API:</p>
+<ul>
+<li>decorate resource types values in <code>type</code> and <code>accept</code> attributes with links to the corresponding API documentation sections</li>
+<li>use <code>accept</code> values to select widgets that allow to enter values required for following the hyperlink and construct the HTTP request</li>
+<li>use <code>auth</code> values to manage authorization needs and when required to display login widgets</li>
+<li>render a full dump of the request (e.g. by means of a curl statement) along to response representation </li>
+<li>provide a "report a  problem" link along with every response. If your developers have a problem with / identify a bug in your API, they would simply fire the corresponding API call in a browser, then click on the report button, and the corresponding issue-reporting widget could then post your user's report along with the full HTTP request and the returned response into your issue tracking system</li>
+<li>provide UI widgets for rendering your resource types, that illustrate how the information returned could/should get displayed</li>
+</ul>
+<p>Contrary to most other playground solutions, this approach guarantees that the playground is always up-to-date with your API, as it is not a separate component independently developed from your API, but instead the API IS the playground. And still: the actual playground implementation can be nicely decoupled from your actual API code, maybe with some minor exceptions, like embedding JavaScript and CSS links into your HTML representation or some hacks required to overcome limitations of browsers (e.g. tunnel PUT/PATCH requests through POST, as browsers only support GET and POST in forms)</p>
+<p>Most modern web service frameworks provide support for multiple serialization formats and HTTP content negotiation, so building the initial support for multiple content types is doable with little extra efforts. Of course the actual implementation of the playground features like UI widgets in JavaScript and CSS can become quite some work -- depending on your own expectations and goals. </p>
+<h2 id="what-does-hypertext-bring-to-your-business">What does hypertext bring to your business?</h2>
+<p>All the advantages listed above are important for you business, as they reduce the cost of change, help you promoting/explaining your offering to potential users and whatever helps your users is also good for your API business.</p>
+<p>An additional, and maybe the most important aspect of hypertext based API on the long run is the possibility of a detailed analysis of your API usage. If your API is representing your business offering, you need to understand not only which resources of your API are popular, but also how your user's applications combine the various resources in their application flow.</p>
+<p>Take the efforts successful websites spend to analyze the behavior of their users and how they navigate through their website. I believe nobody disagrees that detailed understanding of user behavior and optimization around that is what differentiates a good website from a successful one. Now transfer this analogy from the website to your API: A classical, URI template based API is equivalent to a website where the only analytic tool you have available are page impression counts, as a HTTP based API (contrary to websites, where the browser implicitly sets the referrer header) lacks mechanisms that allow you to analyze the flow of the business process your users have taken. With a hypertext based API design instead where the URLs that are linking between the individual steps of a business process are nothing but meaningless opaque strings for the API user, you can easily encode additional information into the URI that allows you to track the detailed flow of your users (or better: the end-users of their applications).</p>
+<p>In case your API provides more that just a HTTP based interface to well-defined functionality, if you develop a solution where you have somewhere in your implementation to make the choice which of the possible responses might be the best / most appropriate for a given business process, or how to best rank the list of next possible steps, then detailed tracking of your API usage is mission critical for the incremental improvement of a good API towards a successful one. </p>
+<p>The collected usage data can become the strategic business asset securing your business success once other players come and try to copy your offering. You better don't rely on the hope that you're too clever for others to copy your innovation. If Gartner is right and <a href="http://www.gartner.com/newsroom/id/1453519">information will become the oil of the 21st century</a>, then you better start collecting data early, so that you can convert it into information required to stay successful in your domain. And if your API offering is in the heart of your business, then you better ensure that the tracking happens implicitly (through your links) and you don't rely on your API users to send back tracking information to you.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+			<hr>
+
+            <p>
+				Copyright &copy; 
+				<a href="/legal/" rel="copyright">
+					<span itemprop="copyrightHolder">meshcaline.org</span>, <span itemprop="copyrightYear">2014-<script>document.write(new Date().getFullYear())</script></span>
+				</a> 
+				| 
+				<span rel="license">
+					<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+						<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+					</a>
+				</span>
+				|
+				<a href="/privacy/">Privacy Policy</a>
+			</p>
+			<p>Published with <a href="http://mkdocs.org">MkDocs</a></p>
+		</p>
+
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 72, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

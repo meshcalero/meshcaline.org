@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://blog.meshcaline.org/filters/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Consumer Driven Response Types - meshcaline.org</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/json.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="..">meshcaline.org</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../meshcaline/" class="nav-link">meshcaline?</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Content</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../rest-in-peace/" class="dropdown-item">REST in Peace</a>
+</li>
+                                    
+<li>
+    <a href="../basics/" class="dropdown-item">Basic meshcaline</a>
+</li>
+                                    
+<li>
+    <a href="../hypertext/" class="dropdown-item">Why Hypertext API</a>
+</li>
+                                    
+<li>
+    <a href="../permalinks/" class="dropdown-item">API Permalinks</a>
+</li>
+                                    
+<li>
+    <a href="../pagination/" class="dropdown-item">Paginateable Collections</a>
+</li>
+                                    
+<li>
+    <a href="../evolution/" class="dropdown-item">API Evolution & Compatibility</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Consumer Driven Response Types</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../evolution/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../about/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#consumer-driven-response-types" class="nav-link">Consumer Driven Response Types</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#experimental-features" class="nav-link">Experimental features</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#feature-deprecation" class="nav-link">Feature deprecation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#telling-me-what-you-need" class="nav-link">Telling me what you need!</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-do-you-get-from-that" class="nav-link">What do you get from that?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="consumer-driven-response-types">Consumer Driven Response Types</h1>
+<p>A <em class="m">meshcaline</em> API supports <em>Consumer Driven Resource Types</em>, an API feature that allows you to manage backward incompatible changes in a controlled way, and by that help reducing the negative implications of those. Let's first look into two common problems where this becomes beneficial:</p>
+<h2 id="experimental-features">Experimental features</h2>
+<p>As we have seen in <a href="../evolution/">API Evolution &amp; Compatibility</a> we have to carefully plan any change to our API to make sure that the change is (a) backward compatible to previous API version and (b) enables the introduction of additional features in the future. But this is not aways possible.</p>
+<p>Daily practice shows us, that regardless how hard we try, it usually requires some iterations until a problem is well enough understood and a solution's API design is mature and sustainable. This seems to be a unresolvable conflict to backward compatibility. How can you experiment with your API design if you always have to make sure that you neither break the past nor the future? The purpose of an experiment is to learn from mistakes and then iterate until you have found an appropriate e solution.</p>
+<p>One approach to overcome this dilemma is to run those experiments in an isolated environment. Only a set of pilot clients where you can manage the introduction of backward incompatible changes in the various iterations of the experiment is allowed to use this environment. Unfortunately this can become quite expensive, as you have to operate and maintain those dedicated environments. And in case you have more of those experiments ongoing at the same time and with different clients, then you might even need to have dedicated environments for specific combinations of experiments.</p>
+<p>Another popular approach that tries to overcome that problem is "information hiding". By not mentioning the experimental features and resources in the API documentation, one assumes that only those clients participating in the experiment will know about the new capabilities (as only they get access to the corresponding documentation), and with that it is safe to run those experiments on production systems. Unfortunately this is a wrong assumption: Developers have a natural distrust to documentation and trust more what they see. As a result you will see that developers outside of the group of experiment participants will discover the new feature when they play with your API e.g. with <a href="https://www.postman.com/product/api-client">Postman</a>. And once they like what they see, they will start using it, regarless of what is written in your documentation. For exactly that reason <a href="https://cloud.google.com/apis/design/compatibility#changing_visible_behavior_of_existing_requests">Google's API guidelines</a> don't allow their developers to ever change any behaviour or semantics of production API, <em>even when such behavior is not explicitly supported or documented</em>.</p>
+<h2 id="feature-deprecation">Feature deprecation</h2>
+<p>For another type of problem let's pick a typical example: When you launched the API for concert ticket business you were a small local company, focusing on the US market and due to that amount in your <code>price</code> attrbiute in your API was implicitly in US$. As your business grows you want to expand into other regions and also sell tickets cross border with currency conversion. To avoid that you have to introduce a new major API version for that business expansion, you decide to introduce two additional data elements <code>ticket_price</code> and <code>customer_price</code> next to the existing <code>price</code>, both containing two attributes <code>amount</code> and <code>currency</code>. The old <code>price</code> attribute gets deprecated, but for your legacy clients who only request tickets for the US, the same API still does the job. </p>
+<p>After some time, you learn from your clients that they now use <code>ticket_price</code> and <code>customer_price</code> too, in order to participate in the new international business. As every deprecated feature adds a smell to your API (and the risk that also new clients would still use it) you would like to get rid of the old <code>price</code> attribute. Unfortunately deleting a mandatory element is a backward incompatible change. And you don't have big enough business case to introduce a new major version (neither for yourself, nor for your clients to migrate), as the smell (like many other forms of technical debt) doesn't directly hurt anyone.</p>
+<h2 id="telling-me-what-you-need">Telling me what you need!</h2>
+<p>The <em class="m">meshcaline</em> design allows you to address both problems with a single solution. It is derived from <a href="https://martinfowler.com/articles/consumerDrivenContracts.html">Consumer Driven Contracts</a>, where your clients tell you what behaviour they expect from you by providing you test cases that you embed into your API's build pipeline. Whenever a new version breaks an existing consumer contract your build breaks. Then you know that you have to either change your new version or talk with your client to resolve the problem before the next release. While this is a powerful tool when you have a close relationship with a handful of customers, it doesn't fit for public API with a potential large number of clients, some of which you might not even know.</p>
+<p>Still, the idea of knowing what exactly your customers expect is compelling. Instead, of sending you tests, with <em class="m">meshcaline's</em> <em>Consumer Driven Response Types</em> your clients use a query language on the data elements of your response types to tell you exactly which data elements they need. And then your API only responds exactly those elements.</p>
+<p>Instead of inventing a new query language, <em class="m">meshcaline's</em> <em>Consumer Driven Resource Types</em> reuse the well defined query language of Facebook's <a href="https://graphql.org/">GraphQL</a>.  </p>
+<h2 id="what-do-you-get-from-that">What do you get from that?</h2>
+<p>With <em>Consumer Driven Resource Types</em> you can rely on the "information hiding" approach for experimental features, as clients not participating in the experiment would not be able to discover the experminatal feature by chance when playing with your API. And you can also securely remove deprecated features when you see that they are no longer in use. While this is in theory still a backward incompatible change, as long as it doesn't break anything, who cares?</p>
+<p>But there are more advantages that come with <em>Consumer Driven Resource Types</em>:</p>
+<ul>
+<li>By only responding what has been explicitly requested your clients can make best use of the available bandwidth to your API and you have eliminated the risk of <a href="../evolution/#non-functional-changes">non-functional backwards incompatibility</a> introduced by additional large data elements. </li>
+<li>Rather than ignoring items of untyped collections they are not aware of, your clients tell you which types of items the can/want to handle. This helps avoiding situations where clients have to iterate through multiple pages of collections before they get the elements they can use.</li>
+<li>You can measure the popularity of each individual data element, which gives you a significant better understanding about your clients than you would have if you would only track the access on the level of resources.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+			<hr>
+
+            <p>
+				Copyright &copy; 
+				<a href="/legal/" rel="copyright">
+					<span itemprop="copyrightHolder">meshcaline.org</span>, <span itemprop="copyrightYear">2014-<script>document.write(new Date().getFullYear())</script></span>
+				</a> 
+				| 
+				<span rel="license">
+					<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+						<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />
+					</a>
+				</span>
+				|
+				<a href="/privacy/">Privacy Policy</a>
+			</p>
+			<p>Published with <a href="http://mkdocs.org">MkDocs</a></p>
+		</p>
+
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 72, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
